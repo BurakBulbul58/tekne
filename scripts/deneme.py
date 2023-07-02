@@ -37,8 +37,8 @@ class Tekne:
         force_msg=GeneralizedForce()
         while not rospy.is_shutdown():
             error_x=self.x1-self.x
-            error_y=self.x1-self.x
-            error_yaw=self.x1-self.x
+            error_y=self.y1-self.y
+            error_yaw=self.yaw1-self.yaw
             force_x, self.lasterror_x, self.integral_x=self.pid_control(error_x, self.lasterror_x,self.integral_x)
             force_y, self.lasterror_y, self.integral_y=self.pid_control(error_y, self.lasterror_y,self.integral_y)
             force_yaw, self.lasterror_yaw, self.integral_yaw=self.pid_control(error_yaw, self.lasterror_yaw,self.integral_yaw)
